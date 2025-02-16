@@ -8,6 +8,8 @@ from typer import Typer
 
 import src.document as Document
 import src.vectorDB as LoadVectorize
+#from huggingface_hub import login
+
 
 app = Typer()
 
@@ -86,7 +88,8 @@ def main(
 ):
     # PREPARE ANNOTATIONS EXTENDED
     logger.info("Loading documents")
-    tokenizer = AutoTokenizer.from_pretrained(model_id, cache_dir=model_path_faiss_cache)
+    #login(token="My_Token")
+    tokenizer = AutoTokenizer.from_pretrained(model_id, cache_dir=model_path_faiss_cache, use_fast=False)
 
     if nr_of_notes is not None and nr_of_notes > 0:
         df_notes = Document.load_notes(NOTES_PATH).head(nr_of_notes)

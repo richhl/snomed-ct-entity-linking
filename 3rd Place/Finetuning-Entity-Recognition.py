@@ -67,7 +67,7 @@ max_tokens_merge_target = 100
 if len(sys.argv) > 6:
     max_tokens_merge_target = int(sys.argv[6])
 
-tokenizer = transformers.AutoTokenizer.from_pretrained(model_id)
+tokenizer = transformers.AutoTokenizer.from_pretrained(model_id, use_fast=False)
 
 df_notes = Document.load_notes(NOTES_PATH)
 

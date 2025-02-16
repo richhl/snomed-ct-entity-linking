@@ -147,7 +147,7 @@ bnb_config = transformers.BitsAndBytesConfig(
 )
 
 # Llama 2 Tokenizer
-tokenizer = transformers.AutoTokenizer.from_pretrained(model_id)
+tokenizer = transformers.AutoTokenizer.from_pretrained(model_id, use_fast=False)
 tokenizer.pad_token = tokenizer.unk_token
 tokenizer.padding_side = "right"
 

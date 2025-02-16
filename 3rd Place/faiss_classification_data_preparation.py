@@ -60,7 +60,7 @@ if len(sys.argv) > 6:
 if len(sys.argv) > 7:
     model_path_faiss = sys.argv[7]
 
-tokenizer = AutoTokenizer.from_pretrained(model_id, cache_dir=model_path_faiss_cache)
+tokenizer = AutoTokenizer.from_pretrained(model_id, cache_dir=model_path_faiss_cache, use_fast=False)
 
 df_notes = Document.load_notes(NOTES_PATH)
 df_notes = Document.split_documents(
