@@ -14,7 +14,7 @@ dependencies:
   - pip:
       - accelerate==0.27.2
       - appdirs==1.4.4
-      - bitsandbytes==0.42.0
+      - bitsandbytes==0.45.2
       - datasets==2.17.0
       - faiss-cpu==1.7.4
       - ipython==8.20.0
